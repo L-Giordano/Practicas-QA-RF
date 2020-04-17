@@ -26,7 +26,7 @@ ${Country}                Argentina
 ${State}                  Mendoza
 ${Password}               Siganmelosbuenos
 ${CP}                     5501
-${exis}         existing
+
 
 #Locators
 ${Logo Homepage}              link:Your Store
@@ -100,4 +100,5 @@ ${btn_confirm_order}              xpath://*[@id="button-confirm"]
 
 ${pagina confirmacion_3}          xpath://*[@id="content"]/h1
 ${msj confirmacion_3}             Your order has been placed!
-
+${Radio_btn_payment_address}      payment_address
+${R_btn_payment_address_select}    new

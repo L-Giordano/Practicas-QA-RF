@@ -146,8 +146,8 @@ Estimate Shipping & Taxes
 
 Revisar direccion
      Sleep      3.0
-     ${radio}       Get Element Count           payment_address
-     Run Keyword If         ${radio}>0            Select Radio Button    payment_address    new
+     ${radio}       Get Element Count           ${Radio_btn_payment_address}
+     Run Keyword If         ${radio}>0            Select Radio Button    ${Radio_btn_payment_address}     ${R_btn_payment_address_select}
 
 
 Checkout

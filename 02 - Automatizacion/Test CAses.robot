@@ -25,21 +25,17 @@ User register
     Log Out
 
 User Login
+
     [Tags]      Login
-    Generate Email
     Go to Homepage
     Check Login
     Log In
     Verificar login
-    Log Out
+
 
 User purchase
     [Tags]      purchase
 
-    Go to Homepage
-    Check Login
-    Log In
-    Verificar login
     Go to Homepage
     Select article
     Verificar articulo en carrito
