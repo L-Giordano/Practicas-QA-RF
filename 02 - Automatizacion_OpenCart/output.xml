@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.8.1 on win32)" generated="20200421 23:59:18.108" rpa="false">
+<suite id="s1" name="Test CAses" source="E:\Automatizacion\Practicas-QA-RF\02 - Automatizacion\Test CAses.robot">
+<kw name="Inicializar sistema p/pruebas" library="Keywords_Global" type="setup">
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<doc>Sets the directory for captured screenshots.</doc>
+<arguments>
+<arg>Screenshot</arg>
+</arguments>
+<status status="PASS" starttime="20200421 23:59:18.701" endtime="20200421 23:59:18.701"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>0.2</arg>
+</arguments>
+<status status="PASS" starttime="20200421 23:59:18.701" endtime="20200421 23:59:18.701"></status>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<doc>Sets the timeout that is used by various keywords.</doc>
+<arguments>
+<arg>10.0</arg>
+</arguments>
+<status status="PASS" starttime="20200421 23:59:18.717" endtime="20200421 23:59:18.717"></status>
+</kw>
+<kw name="Generar Email p/Nuevo registro" library="Keywords_Global">
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<arguments>
+<arg>6</arg>
+<arg>${abc}</arg>
+</arguments>
+<assign>
+<var>${Usuario}</var>
+</assign>
+<msg timestamp="20200421 23:59:18.717" level="INFO">${Usuario} = gctfgq</msg>
+<status status="PASS" starttime="20200421 23:59:18.717" endtime="20200421 23:59:18.717"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>${Usuario}</arg>
+<arg>@chipote.com</arg>
+</arguments>
+<assign>
+<var>${Email_Nw_Rg}</var>
+</assign>
+<msg timestamp="20200421 23:59:18.717" level="INFO">${Email_Nw_Rg} = gctfgq@chipote.com</msg>
+<status status="PASS" starttime="20200421 23:59:18.717" endtime="20200421 23:59:18.717"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${Email_Nw_Rg}</arg>
+</arguments>
+<msg timestamp="20200421 23:59:18.717" level="INFO">${Email_Nw_Rg} = gctfgq@chipote.com</msg>
+<status status="PASS" starttime="20200421 23:59:18.717" endtime="20200421 23:59:18.717"></status>
+</kw>
+<status status="PASS" starttime="20200421 23:59:18.717" endtime="20200421 23:59:18.717"></status>
+</kw>
+<kw name="Salvar Email_Nw_Rg" library="Keywords_Global">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${date}</var>
+</assign>
+<msg timestamp="20200421 23:59:18.717" level="INFO">${date} = 2020-04-21 23:59:18.717</msg>
+<status status="PASS" starttime="20200421 23:59:18.717" endtime="20200421 23:59:18.717"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${date}\n</arg>
+<arg>${Email_Nw_Rg}</arg>
+</arguments>
+<assign>
+<var>${file}</var>
+</assign>
+<msg timestamp="20200421 23:59:18.717" level="INFO">${file} = 2020-04-21 23:59:18.717
+ gctfgq@chipote.com</msg>
+<status status="PASS" starttime="20200421 23:59:18.717" endtime="20200421 23:59:18.717"></status>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<doc>Appends the given content to the specified file.</doc>
+<arguments>
+<arg>Email/email.txt</arg>
+<arg>${file}\n</arg>
+</arguments>
+<msg timestamp="20200421 23:59:18.717" level="INFO" html="yes">Appended to file '&lt;a href="file://E:\Automatizacion\Practicas-QA-RF\02 - Automatizacion\Email\email.txt"&gt;E:\Automatizacion\Practicas-QA-RF\02 - Automatizacion\Email\email.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20200421 23:59:18.717" endtime="20200421 23:59:18.717"></status>
+</kw>
+<status status="PASS" starttime="20200421 23:59:18.717" endtime="20200421 23:59:18.717"></status>
+</kw>
+<kw name="Buscar Email p/Login" library="Keywords_Global">
+<kw name="Get File" library="OperatingSystem">
+<doc>Returns the contents of a specified file.</doc>
+<arguments>
+<arg>Email/email.txt</arg>
+</arguments>
+<assign>
+<var>${texto}</var>
+</assign>
+<msg timestamp="20200421 23:59:18.717" level="INFO" html="yes">Getting file '&lt;a href="file://E:\Automatizacion\Practicas-QA-RF\02 - Automatizacion\Email\email.txt"&gt;E:\Automatizacion\Practicas-QA-RF\02 - Automatizacion\Email\email.txt&lt;/a&gt;'.</msg>
+<msg timestamp="20200421 23:59:18.733" level="INFO">${texto} = Listado de correos generados de forma aleatoria:
+ ccolorado@chipote.com
+2020-04-14 01:49:08.999
+ qvsmwq@chipote.com
+2020-04-16 20:10:50.281
+ onsera@chipote.com
+2020-04-16 23:38:09.628
+ sjawkz@chipote....</msg>
+<status status="PASS" starttime="20200421 23:59:18.717" endtime="20200421 23:59:18.733"></status>
+</kw>
+<kw name="Split String" library="String">
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<arguments>
+<arg>${texto}</arg>
+</arguments>
+<assign>
+<var>@{lista}</var>
+</assign>
+<msg timestamp="20200421 23:59:18.733" level="INFO">@{lista} = [ Listado | de | correos | generados | de | forma | aleatoria: | ccolorado@chipote.com | 2020-04-14 | 01:49:08.999 | qvsmwq@chipote.com | 2020-04-16 | 20:10:50.281 | onsera@chipote.com | 2020-04-16 | ...</msg>
+<status status="PASS" starttime="20200421 23:59:18.733" endtime="20200421 23:59:18.733"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${lista}</arg>
+<arg>-1</arg>
+</arguments>
+<assign>
+<var>${Email}</var>
+</assign>
+<msg timestamp="20200421 23:59:18.733" level="INFO">${Email} = gctfgq@chipote.com</msg>
+<status status="PASS" starttime="20200421 23:59:18.733" endtime="20200421 23:59:18.733"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${Email}</arg>
+</arguments>
+<msg timestamp="20200421 23:59:18.733" level="INFO">${Email} = gctfgq@chipote.com</msg>
+<status status="PASS" starttime="20200421 23:59:18.733" endtime="20200421 23:59:18.733"></status>
+</kw>
+<status status="PASS" starttime="20200421 23:59:18.717" endtime="20200421 23:59:18.733"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${homepage}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20200421 23:59:18.733" level="INFO">Opening browser 'chrome' to base url 'https://demo.opencart.com/'.</msg>
+<status status="PASS" starttime="20200421 23:59:18.733" endtime="20200421 23:59:28.021"></status>
+</kw>
+<status status="PASS" starttime="20200421 23:59:18.701" endtime="20200421 23:59:28.022"></status>
+</kw>
+<test id="s1-t1" name="OPcart-001 Realizar sign in en el sitio">
+<kw name="Ir a pagina de registro" library="Keywords_Global">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${My Account}</arg>
+</arguments>
+<msg timestamp="20200421 23:59:28.028" level="INFO">Clicking element 'link:My Account'.</msg>
+<status status="PASS" starttime="20200421 23:59:28.027" endtime="20200421 23:59:30.667"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${Register}</arg>
+</arguments>
+<msg timestamp="20200421 23:59:30.668" level="INFO">Clicking element 'link:Register'.</msg>
+<status status="PASS" starttime="20200421 23:59:30.667" endtime="20200421 23:59:32.572"></status>
+</kw>
+<status status="PASS" starttime="20200421 23:59:28.026" endtime="20200421 23:59:32.572"></status>
+</kw>
+<kw name="Registrar nuevo Usuario" library="Keywords_Global">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${Reg_Input_FstName}</arg>
+<arg>${First Name}</arg>
+</arguments>
+<msg timestamp="20200421 23:59:32.575" level="INFO">Typing text 'Chapulin' into text field 'xpath://*[@id="input-firstname"]'.</msg>
+<status status="PASS" starttime="20200421 23:59:32.574" endtime="20200421 23:59:33.427"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${Reg_Input_LastName}</arg>
+<arg>${Last Name}</arg>
+</arguments>
+<msg timestamp="20200421 23:59:33.428" level="INFO">Typing text 'Colorado' into text field 'xpath://*[@id="input-lastname"]'.</msg>
+<status status="PASS" starttime="20200421 23:59:33.427" endtime="20200421 23:59:34.238"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${Reg_Input_Email}</arg>
+<arg>${Email_Nw_Rg}</arg>
+</arguments>
+<msg timestamp="20200421 23:59:34.239" level="INFO">Typing text 'gctfgq@chipote.com' into text field 'xpath://*[@id="input-email"]'.</msg>
+<status status="PASS" starttime="20200421 23:59:34.238" endtime="20200421 23:59:35.158"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${Reg_Input_Telephone}</arg>
+<arg>${Telephone}</arg>
+</arguments>
+<msg timestamp="20200421 23:59:35.159" level="INFO">Typing text '987654321' into text field 'xpath://*[@id="input-telephone"]'.</msg>
+<status status="PASS" starttime="20200421 23:59:35.158" endtime="20200421 23:59:35.980"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${Reg_Input_password}</arg>
+<arg>${Password}</arg>
+</arguments>
+<msg timestamp="20200421 23:59:35.981" level="INFO">Typing text 'Siganmelosbuenos' into text field 'xpath://*[@id="input-password"]'.</msg>
+<status status="PASS" starttime="20200421 23:59:35.980" endtime="20200421 23:59:36.862"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${Reg_Input_confirm}</arg>
+<arg>${Password}</arg>
+</arguments>
+<msg timestamp="20200421 23:59:36.865" level="INFO">Typing text 'Siganmelosbuenos' into text field 'xpath://*[@id="input-confirm"]'.</msg>
+<status status="PASS" starttime="20200421 23:59:36.864" endtime="20200421 23:59:37.845"></status>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<arguments>
+<arg>${Accept Terms_1}</arg>
+</arguments>
+<msg timestamp="20200421 23:59:37.846" level="INFO">Selecting checkbox 'xpath://*[@id="content"]/form/div/div/input[1]'.</msg>
+<status status="PASS" starttime="20200421 23:59:37.845" endtime="20200421 23:59:39.085"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${Terminar Reg}</arg>
+</arguments>
+<msg timestamp="20200421 23:59:39.086" level="INFO">Clicking element 'xpath://*[@id="content"]/form/div/div/input[2]'.</msg>
+<status status="PASS" starttime="20200421 23:59:39.085" endtime="20200421 23:59:42.116"></status>
+</kw>
+<status status="PASS" starttime="20200421 23:59:32.573" endtime="20200421 23:59:42.117"></status>
+</kw>
+<kw name="Verificar registro exitoso" library="Keywords_Global">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${pagina confirmacion_Registro}</arg>
+</arguments>
+<status status="PASS" starttime="20200421 23:59:42.119" endtime="20200421 23:59:42.628"></status>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<arguments>
+<arg>${pagina confirmacion_Registro}</arg>
+<arg>${msj confirmacion_Registro}</arg>
+</arguments>
+<msg timestamp="20200421 23:59:43.112" level="INFO">Element 'xpath://*[@id="content"]/h1' contains text 'Your Account Has Been Created!'.</msg>
+<status status="PASS" starttime="20200421 23:59:42.628" endtime="20200421 23:59:43.112"></status>
+</kw>
+<status status="PASS" starttime="20200421 23:59:42.118" endtime="20200421 23:59:43.113"></status>
+</kw>
+<tags>
+<tag>Register</tag>
+</tags>
+<status status="PASS" starttime="20200421 23:59:28.022" endtime="20200421 23:59:43.114" critical="yes"></status>
+</test>
+<test id="s1-t2" name="OPcart-002 Realizar log out">
+<kw name="Log Out" library="Keywords_Global">
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>${My Account}</arg>
+</arguments>
+<msg timestamp="20200421 23:59:43.125" level="INFO">Clicking link 'link:My Account'.</msg>
+<status status="PASS" starttime="20200421 23:59:43.124" endtime="20200421 23:59:45.918"></status>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>${Logout}</arg>
+</arguments>
+<msg timestamp="20200421 23:59:45.919" level="INFO">Clicking link 'link:Logout'.</msg>
+<status status="PASS" starttime="20200421 23:59:45.918" endtime="20200421 23:59:48.857"></status>
+</kw>
+<status status="PASS" starttime="20200421 23:59:43.122" endtime="20200421 23:59:48.857"></status>
+</kw>
+<kw name="Verificar Logout exitoso" library="Keywords_Global">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${pagina confirmacion_LogOut}</arg>
+</arguments>
+<status status="PASS" starttime="20200421 23:59:48.860" endtime="20200421 23:59:49.349"></status>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<arguments>
+<arg>${pagina confirmacion_LogOut}</arg>
+<arg>${msj confirmacion_LogOut}</arg>
+</arguments>
+<msg timestamp="20200421 23:59:49.818" level="INFO">Element 'xpath://*[@id="content"]/h1' contains text 'Account Logout'.</msg>
+<status status="PASS" starttime="20200421 23:59:49.349" endtime="20200421 23:59:49.818"></status>
+</kw>
+<status status="PASS" starttime="20200421 23:59:48.859" endtime="20200421 23:59:49.819"></status>
+</kw>
+<tags>
+<tag>Logout</tag>
+</tags>
+<status status="PASS" starttime="20200421 23:59:43.120" endtime="20200421 23:59:49.820" critical="yes"></status>
+</test>
+<test id="s1-t3" name="OPcart-003 Realizar log In">
+<kw name="Ir a pagina de Log In" library="Keywords_Global">
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>${My Account}</arg>
+</arguments>
+<msg timestamp="20200421 23:59:49.845" level="INFO">Clicking link 'link:My Account'.</msg>
+<status status="PASS" starttime="20200421 23:59:49.844" endtime="20200421 23:59:53.034"></status>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>${Login}</arg>
+</arguments>
+<msg timestamp="20200421 23:59:53.035" level="INFO">Clicking link 'link:Login'.</msg>
+<status status="PASS" starttime="20200421 23:59:53.034" endtime="20200421 23:59:55.220"></status>
+</kw>
+<status status="PASS" starttime="20200421 23:59:49.843" endtime="20200421 23:59:55.220"></status>
+</kw>
+<kw name="Realizar Log In" library="Keywords_Global">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${Reg_Input_Email}</arg>
+</arguments>
+<status status="PASS" starttime="20200421 23:59:55.223" endtime="20200421 23:59:55.722"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${Reg_Input_Email}</arg>
+<arg>${Email}</arg>
+</arguments>
+<msg timestamp="20200421 23:59:55.723" level="INFO">Typing text 'gctfgq@chipote.com' into text field 'xpath://*[@id="input-email"]'.</msg>
+<status status="PASS" starttime="20200421 23:59:55.722" endtime="20200421 23:59:56.705"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${Reg_Input_password}</arg>
+<arg>${Password}</arg>
+</arguments>
+<msg timestamp="20200421 23:59:56.706" level="INFO">Typing text 'Siganmelosbuenos' into text field 'xpath://*[@id="input-password"]'.</msg>
+<status status="PASS" starttime="20200421 23:59:56.705" endtime="20200421 23:59:57.684"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${Login_Btn}</arg>
+</arguments>
+<msg timestamp="20200421 23:59:57.685" level="INFO">Clicking element 'xpath://*[@id="content"]/div/div[2]/div/form/input'.</msg>
+<status status="PASS" starttime="20200421 23:59:57.684" endtime="20200422 00:00:00.420"></status>
+</kw>
+<status status="PASS" starttime="20200421 23:59:55.222" endtime="20200422 00:00:00.420"></status>
+</kw>
+<kw name="Verificar login" library="Keywords_Global">
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${zero}</var>
+</assign>
+<msg timestamp="20200422 00:00:00.424" level="INFO">${zero} = 0</msg>
+<status status="PASS" starttime="20200422 00:00:00.423" endtime="20200422 00:00:00.424"></status>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>${My Account}</arg>
+</arguments>
+<msg timestamp="20200422 00:00:00.426" level="INFO">Clicking link 'link:My Account'.</msg>
+<status status="PASS" starttime="20200422 00:00:00.425" endtime="20200422 00:00:02.694"></status>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${Login}</arg>
+</arguments>
+<assign>
+<var>${count}</var>
+</assign>
+<msg timestamp="20200422 00:00:03.021" level="INFO">${count} = 0</msg>
+<status status="PASS" starttime="20200422 00:00:02.694" endtime="20200422 00:00:03.021"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${count}</arg>
+<arg>${zero}</arg>
+</arguments>
+<status status="PASS" starttime="20200422 00:00:03.022" endtime="20200422 00:00:03.023"></status>
+</kw>
+<status status="PASS" starttime="20200422 00:00:00.422" endtime="20200422 00:00:03.023"></status>
+</kw>
+<tags>
+<tag>Login</tag>
+</tags>
+<status status="PASS" starttime="20200421 23:59:49.840" endtime="20200422 00:00:03.025" critical="yes"></status>
+</test>
+<kw name="Teardown espc" library="Keywords_Global" type="teardown">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20200422 00:00:03.034" endtime="20200422 00:00:05.392"></status>
+</kw>
+<status status="PASS" starttime="20200422 00:00:03.033" endtime="20200422 00:00:05.393"></status>
+</kw>
+<status status="PASS" starttime="20200421 23:59:18.123" endtime="20200422 00:00:05.393"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0">Critical Tests</stat>
+<stat pass="3" fail="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0">Login</stat>
+<stat pass="1" fail="0">Logout</stat>
+<stat pass="1" fail="0">Register</stat>
+</tag>
+<suite>
+<stat pass="3" fail="0" id="s1" name="Test CAses">Test CAses</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
