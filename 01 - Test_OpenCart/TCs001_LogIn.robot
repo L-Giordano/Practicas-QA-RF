@@ -1,5 +1,5 @@
 *** Settings ***
-Resource            Keywords_Global.robot
+Resource            Keywords.robot
 
 Suite Setup          Inicializar sistema p/pruebas
 Suite Teardown       Teardown espc

@@ -12,7 +12,7 @@ Inicializar sistema p/pruebas
     Salvar Email_Nw_Rg
     Buscar Email p/Login
     Open browser                     ${homepage}   ${browser}
-
+    Maximize Browser Window
 
 #Keywordrs para la inicializacion
 
